@@ -1,0 +1,15 @@
+[user]
+	name = David Hayes
+	email = drhayes@gmail.com
+[github]
+	user = drhayes
+	token = c82b6a675f105944f3bc26aadc9a98c5
+[core]
+	excludesfile = /Users/drhayes/.gitignore_global
+	editor = vim
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = true
