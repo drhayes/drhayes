@@ -109,3 +109,6 @@ endfor
 " =============== Theme ====================
 set background=dark
 colorscheme solarized
+
+" =============== GUI Settings ==================
+set guifont=Inconsolata:h14
