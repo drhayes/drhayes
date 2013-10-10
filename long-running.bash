@@ -5,8 +5,8 @@
 # Modified slightly for OSX support and blacklist (see the egrep loop in the
 # precmd() function
 
-if [ -f ~/src/personal/preexec.bash ]; then
-    . ~/src/personal/preexec.bash
+if [ -f ~/src/drhayes/preexec.bash ]; then
+    . ~/src/drhayes/preexec.bash
 else
     echo "Could not find preexec.bash"
 fi
