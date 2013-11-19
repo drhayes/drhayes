@@ -1,14 +1,10 @@
-        RED="\[\033[0;31m\]"
-     YELLOW="\[\033[0;33m\]"
- 	  GREEN="\[\033[0;32m\]"
-       BLUE="\[\033[0;34m\]"
-  LIGHT_RED="\[\033[1;31m\]"
-LIGHT_GREEN="\[\033[1;32m\]"
-      WHITE="\[\033[1;37m\]"
- LIGHT_GRAY="\[\033[0;37m\]"
- COLOR_NONE="\[\e[0m\]"
- BOLD=`tput bold`
- NORMAL=`tput sgr0`
+RED="\[$(tput setaf 1)\]"
+YELLOW="\[$(tput setaf 3)\]"
+GREEN="\[$(tput setaf 2)\]"
+BLUE="\[$(tput setaf 4)\]"
+WHITE="\[$(tput setaf 7)\]"
+BOLD="\[$(tput bold)\]"
+NORMAL="\[$(tput sgr0)\]"
 
 function parse_git_branch {
 
@@ -39,12 +35,12 @@ function parse_git_branch {
 
 function prompt_func() {
     previous_return_value=$?;
-    prompt="${TITLEBAR}${BLUE}[${LIGHT_RED}\w${LIGHT_GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE} "
+    prompt="${BLUE}[${RED}\w${GREEN}${BLUE}]${NORMAL} "
     if test $previous_return_value -eq 0
     then
         PS1="${prompt}➔  "
     else
-        PS1="${prompt}${RED}➔${COLOR_NONE}  "
+        PS1="${prompt}${RED}➔${NORMAL}  "
     fi
 }
 
