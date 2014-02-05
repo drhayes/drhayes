@@ -25,6 +25,15 @@ alias gl='git log'
 
 alias serveme="http-server"
 
+# First, npm install -g consolehighlighter
+# https://github.com/nyteshade/ConsoleHighlighter
+function seeJsCode() {
+  consoleHighlight $1 | less -r
+}
+alias js=seeJsCode
+
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
