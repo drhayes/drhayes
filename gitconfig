@@ -1,6 +1,6 @@
 [user]
 	name = David Hayes
-	email = drhayes@gmail.com
+	email = drhayes@glgroup.com
 [github]
 	user = drhayes
 	token = c82b6a675f105944f3bc26aadc9a98c5
@@ -15,3 +15,6 @@
 	ui = true
 [push]
 	default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

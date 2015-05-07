@@ -15,6 +15,10 @@ launchctl setenv PATH $PATH
 # Start a local stupid redis
 alias start-redis="redis-server /usr/local/etc/redis.conf"
 
+# Source DB info for GLG
+. ~/.glg_db
+
+
 # Autocomplete git branch names
 if [ -f ~/src/drhayes/git-completion.bash ]; then
   . ~/src/drhayes/git-completion.bash
@@ -24,11 +28,21 @@ if [ -f ~/.aws-keys ]; then
   . ~/.aws-keys
 fi
 
+# Queue service AWS key stuff
+# Now my personal site keys won't work.
+. ~/.secret-aws-stuff
+
 # Set tab title to CWD
 function set_tab_title {
   echo -n -e "\033]0;${PWD##*/}\007"
 }
 PROMPT_COMMAND="set_tab_title ; $PROMPT_COMMAND"
+
+# Weather.
+function weather() {
+  loc="$1"
+  curl -s "http://api.openweathermap.org/data/2.5/weather?q=${loc:-austin}&units=imperial" | jq .main.temp | figlet -kcf big
+}
 
 # Make less search case insensitive by default and use colors
 alias less='less -Ri'
@@ -40,6 +54,7 @@ alias gc='git commit -v'
 alias gd='git diff'
 alias gca='git commit -av'
 alias gl='git log'
+alias gp='git push'
 
 alias serveme="http-server"
 
