@@ -33,7 +33,8 @@ set autoread                    "Reload files changed outside vim
 set hidden
 
 "turn on syntax highlighting
-syntax enable
+set term=xterm-256color
+syntax on
 
 " ================ Search Settings  =================
 
@@ -110,7 +111,8 @@ endfor
 
 " =============== Theme ====================
 set background=dark
-"colorscheme solarized
+set t_Co=256
+colorscheme termschool
 
 " =============== GUI Settings ==================
 set guifont=Inconsolata:h14

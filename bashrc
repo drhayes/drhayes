@@ -1,6 +1,10 @@
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/bin:~/src/AppRunner/:$PATH
+export GOPATH=~/go
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/bin:~/src/AppRunner/:$GOPATH/bin:$PATH
 launchctl setenv PATH $PATH
+
+# Android dev
+export PATH=${PATH}:~/android-sdk-macosx/platform-tools:~/android-sdk-macosx/tools
 
 # Autojump!
 . /usr/local/etc/autojump.bash
@@ -14,6 +18,9 @@ launchctl setenv PATH $PATH
 
 # Start a local stupid redis
 alias start-redis="redis-server /usr/local/etc/redis.conf"
+
+# Get my IP
+alias myip='curl ip.appspot.com'
 
 # Source DB info for GLG
 . ~/.glg_db
@@ -55,8 +62,14 @@ alias gd='git diff'
 alias gca='git commit -av'
 alias gl='git log'
 alias gp='git push'
+# pretty visual git history
+alias git-pretty="git log --graph --oneline --all --decorate"
 
 alias serveme="http-server"
+
+function mkd() {
+  mkdir -p "$@" && cd "$@"
+}
 
 # First, npm install -g consolehighlighter
 # https://github.com/nyteshade/ConsoleHighlighter
@@ -71,3 +84,8 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# rvm stuff
+source ~/.rvm/scripts/rvm
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
