@@ -7,7 +7,7 @@ launchctl setenv PATH $PATH
 export PATH=${PATH}:~/android-sdk-macosx/platform-tools:~/android-sdk-macosx/tools
 
 # Autojump!
-. /usr/local/etc/autojump.bash
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Long-running commands growlnotify on completion
 #. ~/src/drhayes/preexec.bash
