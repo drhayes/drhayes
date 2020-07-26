@@ -1,4 +1,3 @@
-My Setup
-======
+**It'sa me, drhayes!**
 
-Nothing exciting about it, except that it's mine.
+The real action is at my personal site, https://drhayes.io. See ya there!
